@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <title>Promises</title>
+    </head>
+    <body>
+
+        
+        <script>
+//first example
+        // let p =  new Promise((resolve,reject) => {
+        //     let a=1 + 2 ;
+        //     if( a == 2){
+        //         resolve("success");
+        //     } else {
+        //         reject("failed")
+        //     }
+        // })
+        // p.then((message) =>{
+        //     console.log("this is promises " + message)
+        // }).catch((message) =>{
+        //     console.log(message)
+        // })
+
+        // let p1 =new promises((resolve,reject)=>{
+
+        // })
+//second Example
+        // const promise1 = new Promise((resolve,reject) =>{
+        //     resolve("first promise")
+        // })
+
+        // const promise2 = new Promise((resolve ,reject) =>{
+        //     resolve("second promise")
+        // })
+
+        // const  promise4 = new Promise(function(resolve,reject){
+        //     resolve("forth promise")
+        // })
+
+        // const promise3 = new Promise((resolve,reject) =>{
+        //     resolve("thired promise")
+        // })
+
+        // Promise.all([
+        //     promise1,
+        //     promise2,
+        //     promise3,
+        //     promise4
+        // ]).then((messages) =>{
+        //     console.log(messages)
+        // })
+//third example
+// main use of promises are it will treat asunchronous function as synchronous function and return the result without waiting.
+        //  let promiseToCleanRoom = new Promise((resolve,reject) =>{
+        //      let isClean = true;
+        //      if(isClean){
+        //          resolve("clean")
+        //      }else {
+        //          reject("not clean")
+        //      }
+        //  })
+        //  promiseToCleanRoom.then( (fromresolve) => {
+        //      console.log("room is " + fromresolve )
+        //  }).catch((fromreject) =>{
+        //      console.log("room is not " + fromreject)
+        //  });
+         let cleanRoom = function(){
+             return new Promise((resolve,reject) => {
+                 resolve("Cleamed the room");
+             });
+         };
+
+         let removeGarbage = function(message){
+             return new Promise (function(resolve,reject){
+                 resolve( message + "removed Garbage");
+             });
+         };
+
+         let winIcecream = function(message){
+             return new Promise((resolve,reject) => {
+                 resolve(message + "won Icecream");
+             });
+         };
+         cleanRoom().then((result) =>{
+             return removeGarbage();
+         }).then( (result) =>{
+             return winIcecream();
+         }).then( (result) => {
+             console.log("finished" + result);
+         });
+
+        //  Promise.all([
+        //      cleanRoom(),removeGarbage(),winIcecream()
+        //      ]).then(() =>{
+        //          console.log("all finished");
+        //      });
+//we canuse race insted of all to call one of them first
+
+//without arrow function
+        //  cleanRoom().then(function(){
+        //      return removeGarbage();
+        //  }).then( function(){
+        //      return winIcecream();
+        //  }).then( function(){
+        //      console.log("finished");
+        //  });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>
+            DOM1
+        </title>
+        <style>
+        td{
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>A complex table</caption>
+            <thead>
+                <tr>
+                    <th colspan="3">Invoice #123456789</th>
+                    <th>14 January 2025</th>
+                </tr>   
+                <tr>
+                    <td colspan="2">
+                    <strong>Pay to:</strong>
+                    <br>
+                    Acme Billing Co.
+                    <br>
+                    123 Main St.
+                    <br>
+                    Cityville, NA 12345
+                </td>
+                <td colspan="2">
+                    <strong>Customer:</strong>
+                    <br>
+                    John Smith
+                    <br>
+                    321 Willow Way
+                    <br>
+                    Southeast Northwestershire, MA 54321
+
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Name / Description</th>
+                    <th>Qty</th>
+                    <th>@</th>
+                    <th>Cost</th>
+                </tr>
+                <tr>
+                    <td>Paperclips</td>
+                    <td><input type="text" style="width:40px; " value="1000"/></td>
+                    <td><input type="text" style="width:40px; " value="0.01"/></td></td>
+                    <td id="paper"><input type="text" style="width:40px; " value="10.00"/></td></td>
+                </tr>
+                <tr>
+                    <td>Staples (box)</td>
+                    <td><input type="text" style="width:40px; " value="100"/></td></td>
+                    <td><input type="text" style="width:40px; " value="1.00"/></td></td>
+                    <td id="staples"><input type="text" style="width:40px; " value="100"/></td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <!-- <tr>
+                    <th><button type="button" onclick="addAmount()">Total Amount</button></th>
+                    <td><input type="text" style="width: 50px; margin-left: 250px;"></td>
+                </tr> -->
+                <tr id="sub">
+                    <th colspan="3">Subtotal</th>
+                    <td><input type="text" style="width:40px; " value="110" id="val" onchange="addColor()"/></td></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Tax</th>
+                    <td>8%</td>
+                    <td><input type="text" style="width:40px; " value="8.80"/></td></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Grand Total</th>
+                    <td>$ <input type="text" style="width:50px; " value="118.80"/></td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <script>
+            function addColor(){
+            var Total  = document.getElementById("val").value;
+            if(Total > 250)
+            {
+                document.getElementById("sub").style.backgroundColor = "blue";
+                console.log("entered")
+            }else{
+                document.getElementById("sub").style.backgroundColor = "red";
+                console.log("exit")
+            }
+            }
+
+            function addAmount(){
+                console.log("add")
+                var value1 = document.getElementById("paper").value;
+                console.log(value1,"value1")
+                var value2 = document.getElementById("staples").value;
+                return totalValue = value1 + value2;
+                console.log(totalValue,"jjhjhhhjh")
+
+            }
+        </script>
+    </body>
+</html>

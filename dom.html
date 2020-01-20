@@ -1,0 +1,162 @@
+<html >
+    <head>
+        <title>DOM QUERY</title>
+        <style>
+            table,th,td{
+                border: 1px solid black;
+                margin: 20px;
+                padding: 10px;
+                border-collapse: collapse;
+                text-align: center;
+            }
+            .table{
+                width:1200px;
+                margin-left: 52px;
+            }
+            .button{
+                border:1px solid whitesmoke;
+                border-radius: 12px;
+                margin-left: 50px;
+                border-color: whitesmoke;
+                width: 110px;
+                height: 30px;
+            }
+            .input{
+                width: 150px;
+                border:1px solid whitesmoke;
+                border-radius: 12px;
+                border-color: burlywood;
+                text-align: center;
+                height: 30px;
+            }
+            .input1{
+                width: 150px;
+                border:1px solid whitesmoke;
+                border-color: burlywood;
+                text-align: center;
+                height: 30px;
+            }
+            .table1{
+                margin-left: 900px;
+                width: 353px;
+                height: 75px;
+                padding: 5px;
+                
+            }
+            .img{
+                width: 25px;
+            }
+    
+        </style>
+    </head>
+    <body>
+        <div>
+            <table class="table" id="table">
+                <tr>
+                    <th> # </th>
+                    <th>Product</th>
+                    <th>Quality</th>
+                    <th>Price</th>
+                    <th colspan="2">Total </th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input" value="1"></td>
+                    <td> <input type="text" class="input" value="Apple"></td>
+                    <td><input type="text" class="input" value="1"></td>
+                    <td><input type="text" class="input" value="100"></td>
+                    <td><input type="text" class="input" ></td>
+                    <td ><img src="https://img.icons8.com/cotton/2x/delete-sign--v2.png" class="img" onclick="deleteR()"></td>
+                </tr>
+        
+                 
+            </table>
+            <button type="button" class="button" onclick="addRow()" >Add Row</button><span><button type="button" class="button" style="margin-left: 1000px;" onclick="deleteR()" >Delete Row</button></span><br>
+            <table class="table1" >
+                <tr>
+                    <th>Sub Total</th>
+                    <td><input type="text" class="input1"></td>
+                </tr>
+                <tr>
+                    <th>Tax</th>
+                    <td><input type="text" class="input1"></td>
+                </tr>
+                <tr>
+                    <th>Tax Amount</th>
+                    <td><input type="text" class="input1" value="10%"></td>
+                </tr>
+                <tr>
+                    <th>Grand Total</th>
+                    <td><input type="text" class="input1"></td>
+                </tr>
+                
+            </table>
+        </div>
+        <script>
+                 var table = document.getElementsByTagName("table");
+                 var img = document.getElementsByTagName("img");
+                 console.log(img[0])
+            var input1 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[0].firstElementChild.value;
+            console.log(table[0].firstElementChil,"inp")
+  
+       
+        function addRow(){
+            var table = document.getElementsByTagName("table");
+            var input1 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[0].firstElementChild.value;
+            console.log(table[0].firstElementChild.firstElementChild.nextElementSibling.children[0].firstElementChild,"inp")
+            var input2 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[1].firstElementChild.value;
+            var input3 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[2].firstElementChild.value;
+            var input4 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[3].firstElementChild.value;
+            var input5 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[4].firstElementChild.value;
+          var table = table;
+          var Row = table[0].insertRow(2);
+           var cell1= Row.insertCell(0);
+           var cell2= Row.insertCell(1);
+           var cell3= Row.insertCell(2);
+           var cell4= Row.insertCell(3);
+           var cell5= Row.insertCell(4);
+           var cell6= Row.insertCell(5);
+           cell1.innerHTML =`<html> <input type="text" class="input" ></input><html>`;
+            cell2.innerHTML =`<html> <input type="text" class="input" ></input><html>`;
+            cell3.innerHTML =`<html> <input type="text" class="input" ></input><html>`;
+            cell4.innerHTML =`<html> <input type="text" class="input" ></input><html>`;
+            cell5.innerHTML =`<html> <input type="text" class="input" ></input><html>`;
+            cell6.innerHTML =`<img src="https://img.icons8.com/cotton/2x/delete-sign--v2.png" class="img" onclick="deleteR()">`;
+          
+        }
+        function deleteR(){
+            var table =  document.getElementsByTagName("table");
+            var Row = table[0].deleteRow(1);
+
+        }
+        
+
+
+
+
+
+    //    function addRow(){
+    //         var table1 = document.getElementsByClassName(".table");
+    //         console.log(table1[0],"table1")
+    //         var input1 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[0].firstElementChild.value;
+       
+    //     var input2 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[1].firstElementChild.value;
+    //     var input3 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[2].firstElementChild.value;
+    //     var input4 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[3].firstElementChild.value;
+    //     var input5 = table[0].firstElementChild.firstElementChild.nextElementSibling.children[4].firstElementChild.value;
+    //         var table = document.getElementById("table");
+        
+    //       var Row = table.insertRow(2);
+    //       console.log(Row,"row")
+    //        var cell1= Row.insertCell(0);
+    //        var cell1= Row.insertCell(1);
+    //        var cell1= Row.insertCell(2);
+    //        var cell1= Row.insertCell(3);
+    //        var cell1= Row.insertCell(4);
+    //        cell1.innerHTML = "new cell";
+    //        console.log("entered")
+          
+    //     } 
+        </script>
+    </body>
+</html>
